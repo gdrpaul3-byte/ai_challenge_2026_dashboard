@@ -1,0 +1,98 @@
+{
+  "fetchedAt": "2026-05-08T13:27:13.540Z",
+  "listingUrl": "https://aichallenge4all.or.kr/university",
+  "listingReachable": true,
+  "pages": [
+    {
+      "id": "ai-rookie",
+      "sourceUrl": "https://ai-rookie.or.kr/",
+      "ok": true,
+      "hasScheduleSection": false
+    },
+    {
+      "id": "ai-error-checker",
+      "sourceUrl": "https://ai-checker.or.kr/",
+      "ok": true,
+      "hasScheduleSection": false
+    },
+    {
+      "id": "ai-case-contest",
+      "sourceUrl": "https://aichallenge4all.or.kr/competitions/case-contest",
+      "ok": true,
+      "hasScheduleSection": true
+    },
+    {
+      "id": "ai-quiz",
+      "sourceUrl": "https://aichallenge4all.or.kr/competitions/ai-quiz",
+      "ok": true,
+      "hasScheduleSection": true
+    },
+    {
+      "id": "ai-sciencecenter-creative",
+      "sourceUrl": "https://aichallenge4all.or.kr/competitions/ai-sciencecenter",
+      "ok": true,
+      "hasScheduleSection": true
+    },
+    {
+      "id": "law-data-idea",
+      "sourceUrl": "https://aichallenge4all.or.kr/competitions/law",
+      "ok": true,
+      "hasScheduleSection": true
+    },
+    {
+      "id": "culture-ai-data",
+      "sourceUrl": "https://www.culture.go.kr/digicon/pages/contest_1",
+      "ok": true,
+      "hasScheduleSection": false
+    },
+    {
+      "id": "smart-aquaculture",
+      "sourceUrl": "https://www.fipa-ai.kr/",
+      "ok": true,
+      "hasScheduleSection": true
+    },
+    {
+      "id": "ai-robotics",
+      "sourceUrl": "https://aichallenge4all.or.kr/competitions/ai-robot",
+      "ok": true,
+      "hasScheduleSection": true
+    },
+    {
+      "id": "ai-creative",
+      "sourceUrl": "https://aichallenge4all.or.kr/competitions/ai-creative",
+      "ok": true,
+      "hasScheduleSection": true
+    },
+    {
+      "id": "national-happiness-it",
+      "sourceUrl": "https://aichallenge4all.or.kr/competitions/national-happiness",
+      "ok": true,
+      "hasScheduleSection": true
+    },
+    {
+      "id": "reboot-ai",
+      "sourceUrl": "https://aichallenge4all.or.kr/competitions/youth-ai",
+      "ok": true,
+      "hasScheduleSection": true
+    },
+    {
+      "id": "click-on-ai",
+      "sourceUrl": "https://aichallenge4all.or.kr/competitions/click-on-ai",
+      "ok": true,
+      "hasScheduleSection": true
+    },
+    {
+      "id": "mogef-ai-data",
+      "sourceUrl": "https://mogefdatacontest.co.kr/index.jsp",
+      "ok": true,
+      "hasScheduleSection": false
+    },
+    {
+      "id": "ai-hack-camp",
+      "sourceUrl": "https://www.science.go.kr/mps/1111/bbs/208/moveBbsNttDetail.do?nttSn=48958",
+      "ok": true,
+      "hasScheduleSection": true
+    }
+  ],
+  "warnings": []
+}

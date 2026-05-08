@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2026 전국민 AI 경진대회 · Mechanical Console</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Special+Elite&family=Noto+Serif+KR:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="web/steampunk.css?v=20260508-steampunk">
+  </head>
+  <body>
+
+    <!-- Decorative mounted gears, slowly rotating -->
+    <div class="cog-deco tl" aria-hidden="true">
+      <svg class="cog-rotate" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <g fill="#7a5a2a" stroke="#3d2410" stroke-width="1">
+          <path d="M100 8 L112 18 L128 14 L132 30 L148 32 L144 48
+                   L160 56 L150 70 L162 84 L148 92 L154 108 L138 112
+                   L138 128 L122 126 L114 142 L100 132 L86 142 L78 126
+                   L62 128 L62 112 L46 108 L52 92 L38 84 L50 70 L40 56
+                   L56 48 L52 32 L68 30 L72 14 L88 18 Z"/>
+        </g>
+        <circle cx="100" cy="100" r="46" fill="#a07a3e" stroke="#3d2410" stroke-width="1.5"/>
+        <circle cx="100" cy="100" r="32" fill="#7a5a2a" stroke="#3d2410" stroke-width="1"/>
+        <circle cx="100" cy="100" r="14" fill="#3d2410"/>
+      </svg>
+    </div>
+    <div class="cog-deco tr reverse" aria-hidden="true">
+      <svg class="cog-rotate" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <g fill="#8a6a2a" stroke="#3d2410" stroke-width="1">
+          <path d="M100 8 L112 18 L128 14 L132 30 L148 32 L144 48
+                   L160 56 L150 70 L162 84 L148 92 L154 108 L138 112
+                   L138 128 L122 126 L114 142 L100 132 L86 142 L78 126
+                   L62 128 L62 112 L46 108 L52 92 L38 84 L50 70 L40 56
+                   L56 48 L52 32 L68 30 L72 14 L88 18 Z"/>
+        </g>
+        <circle cx="100" cy="100" r="40" fill="#b8860b" stroke="#3d2410" stroke-width="1.5"/>
+        <circle cx="100" cy="100" r="10" fill="#3d2410"/>
+      </svg>
+    </div>
+    <div class="cog-deco br" aria-hidden="true">
+      <svg class="cog-rotate" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <g fill="#7a5a2a" stroke="#3d2410" stroke-width="1">
+          <path d="M100 8 L112 18 L128 14 L132 30 L148 32 L144 48
+                   L160 56 L150 70 L162 84 L148 92 L154 108 L138 112
+                   L138 128 L122 126 L114 142 L100 132 L86 142 L78 126
+                   L62 128 L62 112 L46 108 L52 92 L38 84 L50 70 L40 56
+                   L56 48 L52 32 L68 30 L72 14 L88 18 Z"/>
+        </g>
+        <circle cx="100" cy="100" r="44" fill="#a07a3e" stroke="#3d2410" stroke-width="1.5"/>
+        <circle cx="100" cy="100" r="12" fill="#3d2410"/>
+      </svg>
+    </div>
+    <div class="cog-deco bl reverse" aria-hidden="true">
+      <svg class="cog-rotate" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <g fill="#6b4612" stroke="#3d2410" stroke-width="1">
+          <path d="M100 8 L112 18 L128 14 L132 30 L148 32 L144 48
+                   L160 56 L150 70 L162 84 L148 92 L154 108 L138 112
+                   L138 128 L122 126 L114 142 L100 132 L86 142 L78 126
+                   L62 128 L62 112 L46 108 L52 92 L38 84 L50 70 L40 56
+                   L56 48 L52 32 L68 30 L72 14 L88 18 Z"/>
+        </g>
+        <circle cx="100" cy="100" r="38" fill="#8a6a2a" stroke="#3d2410" stroke-width="1"/>
+        <circle cx="100" cy="100" r="10" fill="#3d2410"/>
+      </svg>
+    </div>
+
+    <div class="console-frame">
+      <header class="site-header">
+        <div class="title-block">
+          <p class="eyebrow">A.I. Challenge Schedule Monitor · Anno MMXXVI</p>
+          <h1>2026 전국민 AI 경진대회 <span class="ampersand">&amp;</span> 일정 대시보드</h1>
+        </div>
+        <div class="header-meta">
+          <span id="todayLabel" class="today-stamp">오늘 기준 계산 중</span>
+          <a class="brass-link" href="https://aichallenge4all.or.kr/university" target="_blank" rel="noreferrer">공식 명부</a>
+        </div>
+        <div class="rivet-row" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </header>
+
+      <!-- ========================= GAUGE STRIP ========================= -->
+      <section class="gauge-strip" aria-label="요약 게이지">
+        <div class="gauge urgent">
+          <div class="gauge-dial" id="closingSoonDial"></div>
+          <div class="gauge-info">
+            <span class="gauge-label">Imminent</span>
+            <span class="gauge-sublabel">마감 임박</span>
+            <span class="gauge-count" id="closingSoonCount">0</span>
+            <span class="gauge-unit">CONTEST · ALARM</span>
+          </div>
+          <span class="gauge-rivet bl"></span><span class="gauge-rivet br"></span>
+        </div>
+        <div class="gauge open">
+          <div class="gauge-dial" id="openDial"></div>
+          <div class="gauge-info">
+            <span class="gauge-label">In Operation</span>
+            <span class="gauge-sublabel">접수중</span>
+            <span class="gauge-count" id="openCount">0</span>
+            <span class="gauge-unit">VALVES OPEN</span>
+          </div>
+          <span class="gauge-rivet bl"></span><span class="gauge-rivet br"></span>
+        </div>
+        <div class="gauge upcoming">
+          <div class="gauge-dial" id="upcomingDial"></div>
+          <div class="gauge-info">
+            <span class="gauge-label">Forthcoming</span>
+            <span class="gauge-sublabel">예정</span>
+            <span class="gauge-count" id="upcomingCount">0</span>
+            <span class="gauge-unit">PRESSURE BUILDING</span>
+          </div>
+          <span class="gauge-rivet bl"></span><span class="gauge-rivet br"></span>
+        </div>
+        <div class="gauge muted">
+          <div class="gauge-dial" id="ambiguousDial"></div>
+          <div class="gauge-info">
+            <span class="gauge-label">To Verify</span>
+            <span class="gauge-sublabel">확인 필요</span>
+            <span class="gauge-count" id="ambiguousCount">0</span>
+            <span class="gauge-unit">SIGNAL UNCLEAR</span>
+          </div>
+          <span class="gauge-rivet bl"></span><span class="gauge-rivet br"></span>
+        </div>
+        <div class="gauge closed">
+          <div class="gauge-dial" id="closedDial"></div>
+          <div class="gauge-info">
+            <span class="gauge-label">Sealed</span>
+            <span class="gauge-sublabel">마감</span>
+            <span class="gauge-count" id="closedCount">0</span>
+            <span class="gauge-unit">FURNACE COLD</span>
+          </div>
+          <span class="gauge-rivet bl"></span><span class="gauge-rivet br"></span>
+        </div>
+      </section>
+
+      <!-- ========================= CONTROL CONSOLE ========================= -->
+      <section class="controls" aria-label="필터">
+        <div class="field search-field">
+          <span class="field-label">Search Telegraph</span>
+          <svg class="magnifier" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+            <circle cx="10.5" cy="10.5" r="6"/>
+            <line x1="15" y1="15" x2="20" y2="20" stroke-linecap="round"/>
+          </svg>
+          <input id="searchInput" type="search" placeholder="대회명 · 내용 · 대상 검색…">
+        </div>
+        <div class="field select-field">
+          <span class="field-label">Status Dial</span>
+          <select id="statusFilter">
+            <option value="all">— 전체 상태 —</option>
+            <option value="closing-soon">마감 임박</option>
+            <option value="open">접수중</option>
+            <option value="upcoming">예정</option>
+            <option value="ambiguous">확인 필요</option>
+            <option value="closed">마감</option>
+          </select>
+        </div>
+        <div class="field select-field">
+          <span class="field-label">Audience Lever</span>
+          <select id="audienceFilter">
+            <option value="all">— 전체 대상 —</option>
+          </select>
+        </div>
+        <p id="refreshLabel" class="refresh-stamp"><strong>Last Telegram</strong>데이터 갱신 정보 확인 중</p>
+        <span class="corner-rivet bl" aria-hidden="true"></span>
+        <span class="corner-rivet br" aria-hidden="true"></span>
+      </section>
+
+      <!-- ========================= WORKSPACE ========================= -->
+      <section class="workspace">
+        <div class="ledger" aria-label="공모전 목록">
+          <div class="ledger-headline">
+            <h2>Priority Ledger<small>접수 우선순위</small></h2>
+            <span class="ledger-count" id="resultCount">0개 표시</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th style="width: 170px">상태</th>
+                  <th>공모전</th>
+                  <th style="width: 220px">접수일정</th>
+                  <th style="width: 200px">상금 범위</th>
+                  <th>공모내용</th>
+                </tr>
+              </thead>
+              <tbody id="contestRows"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <aside class="detail-panel" aria-label="상세 일정">
+          <div id="detailEmpty" class="detail-empty">
+            <svg class="compass" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="48" cy="48" r="44" fill="#d8c089" stroke="#3d2410" stroke-width="2"/>
+              <circle cx="48" cy="48" r="34" fill="none" stroke="#8a6a2a" stroke-width="1"/>
+              <polygon points="48,12 52,46 48,50 44,46" fill="#a82618" stroke="#3d2410" stroke-width="0.6"/>
+              <polygon points="48,84 52,50 48,46 44,50" fill="#3d2410"/>
+              <circle cx="48" cy="48" r="3" fill="#3d2410"/>
+              <text x="48" y="20" text-anchor="middle" font-family="serif" font-size="9" fill="#3d2410">N</text>
+            </svg>
+            <h2>대회를 선택하시오</h2>
+            <p>좌측 명부에서 한 항목을 클릭하면 진행 일정과 출처, 접수 통로가 이 자리에 새겨집니다.</p>
+          </div>
+          <div id="detailContent" class="detail-content" hidden></div>
+        </aside>
+      </section>
+
+      <footer class="footer-stamp">
+        <span class="seal">Neural Systems Atelier</span>
+        <span>Compiled by mechanical aggregation · gear-driven indexing · brass-bound</span>
+      </footer>
+    </div>
+
+    <script type="module" src="web/js/app.mjs?v=20260508-steampunk"></script>
+  </body>
+</html>

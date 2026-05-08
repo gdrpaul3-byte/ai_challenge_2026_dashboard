@@ -1,0 +1,9 @@
+.superpowers/
+node_modules/
+npm-debug.log*
+.codex-preview/
+.codex-static-preview-*.ps1
+*.log
+__pycache__/
+*.pyc
+design/*.zip
