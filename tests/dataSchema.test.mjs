@@ -109,6 +109,7 @@ test('submitted contests keep team, member, and video metadata', async () => {
   assert.equal(seocho.participation.videoUrl, 'https://youtu.be/vKHGrVniwRo?si=GSaHumDoIibG-arx');
 
   assert.equal(rookie.participation.status, 'submitted');
+  assert.equal(rookie.participation.teamName, 'HSMU_Makers');
   assert.deepEqual(rookie.participation.members, ['신정안', '강민수', '안명진', '이지환', '김규민', '김의준']);
   assert.equal(rookie.participation.videoUrl, 'https://youtu.be/stAhFcbGUu8?si=9oBpAZi37QmRSmdz');
 });
