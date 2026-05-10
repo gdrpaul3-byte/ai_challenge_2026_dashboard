@@ -76,6 +76,116 @@
     "scrape": {
       "sourceReachable": true,
       "hasScheduleSection": false
+    },
+    "participation": {
+      "status": "submitted",
+      "label": "참가 완료",
+      "members": [
+        "신정안",
+        "강민수",
+        "안명진",
+        "이지환",
+        "김규민",
+        "김의준"
+      ],
+      "videoUrl": "https://youtu.be/stAhFcbGUu8?si=9oBpAZi37QmRSmdz"
+    }
+  },
+  {
+    "id": "seocho-ai-design",
+    "title": "2026년 청년 AI 디자인 공모전",
+    "audience": "19~39세 청년, 대학(원)생, 일반인",
+    "statusLabelFromSource": "참가 마감",
+    "registrationStart": "2026-03-03",
+    "registrationEnd": "2026-04-30",
+    "registrationDisplay": "2026.03.03 ~ 2026.04.30 23:59",
+    "registrationConfidence": "exact",
+    "summary": "AI 기술과 창의적 아이디어로 미래 도시 서초를 이미지 또는 영상 콘텐츠로 구현하는 공모전",
+    "contestContent": "NEXT 서초, AI로 미래를 디자인하다를 주제로 서초구의 장소와 상징을 포함한 미래지향적 도시 서초를 AI 프로그램으로 시각화합니다.",
+    "prizeDisplay": "총 상금 1,280만 원",
+    "prizeAmountKrw": 12800000,
+    "sourceUrl": "https://aiseocho.gcontest.co.kr/template/m/32119",
+    "applyUrl": "https://aiseocho.gcontest.co.kr/template/m/32119",
+    "timeline": [
+      {
+        "label": "접수",
+        "dateDisplay": "3.3 ~ 4.30",
+        "start": "2026-03-03",
+        "end": "2026-04-30",
+        "description": "공모전 사무국 홈페이지 온라인 접수"
+      },
+      {
+        "label": "1차 선정 및 캠프",
+        "dateDisplay": "2026.05",
+        "start": "2026-05-01",
+        "end": "2026-05-31",
+        "description": "선정된 20명/팀 대상 청년 AI 디자인캠프 운영"
+      },
+      {
+        "label": "멘토링 및 작품 보완",
+        "dateDisplay": "2026.05 ~ 2026.06",
+        "start": "2026-05-01",
+        "end": "2026-06-30",
+        "description": "전문가 특강과 멘토링을 통한 작품 고도화"
+      },
+      {
+        "label": "시상",
+        "dateDisplay": "2026.07 예정",
+        "start": "2026-07-01",
+        "end": "2026-07-31",
+        "description": "이미지/영상 분야 수상작 발표 및 시상"
+      }
+    ],
+    "lastFetchedAt": "2026-05-10T00:00:00.000+09:00",
+    "notes": "공식 접수처와 공모전 안내 매체 기준. 세부 캠프 일정과 부문별 수상 수는 공식 공지 확인 필요.",
+    "prizeRangeDisplay": "50만~200만 원",
+    "prizeRangeMinKrw": 500000,
+    "prizeRangeMaxKrw": 2000000,
+    "prizeRangeBasis": "이미지/영상 분야 수상 팀 1팀 수령액 기준",
+    "prizeRangeItems": [
+      {
+        "label": "대상",
+        "display": "200만 원",
+        "minKrw": 2000000,
+        "maxKrw": 2000000,
+        "basis": "최종 대상 1명/팀 지급액 기준"
+      },
+      {
+        "label": "최우수상",
+        "display": "100만 원",
+        "minKrw": 1000000,
+        "maxKrw": 1000000,
+        "basis": "최우수상 1명/팀 지급액 기준"
+      },
+      {
+        "label": "우수상",
+        "display": "70만 원",
+        "minKrw": 700000,
+        "maxKrw": 700000,
+        "basis": "우수상 1명/팀 지급액 기준"
+      },
+      {
+        "label": "장려상",
+        "display": "50만 원",
+        "minKrw": 500000,
+        "maxKrw": 500000,
+        "basis": "장려상 1명/팀 지급액 기준"
+      }
+    ],
+    "participation": {
+      "status": "submitted",
+      "label": "참가 완료",
+      "teamName": "HSMU_Makers",
+      "members": [
+        "김선휘",
+        "신정안",
+        "문서정"
+      ],
+      "videoUrl": "https://youtu.be/vKHGrVniwRo?si=GSaHumDoIibG-arx"
+    },
+    "scrape": {
+      "sourceReachable": true,
+      "hasScheduleSection": true
     }
   },
   {

@@ -59,6 +59,19 @@ for (const path of ['data/contests.seed.json', 'data/contests.json']) {
         assert.equal(typeof step.label, 'string', `${contest.id} timeline step missing label`);
         assert.equal(typeof step.dateDisplay, 'string', `${contest.id} timeline step missing dateDisplay`);
       }
+
+      if (contest.participation) {
+        assert.equal(contest.participation.status, 'submitted', `${contest.id} participation status invalid`);
+        assert.equal(typeof contest.participation.label, 'string', `${contest.id} participation label missing`);
+        assert.ok(Array.isArray(contest.participation.members), `${contest.id} participation members must be array`);
+        assert.ok(contest.participation.members.length > 0, `${contest.id} participation members must not be empty`);
+        assert.equal(typeof contest.participation.videoUrl, 'string', `${contest.id} participation videoUrl missing`);
+        assert.match(contest.participation.videoUrl, /^https:\/\/youtu\.be\//, `${contest.id} participation videoUrl must be a YouTube short link`);
+
+        if (contest.participation.teamName) {
+          assert.equal(typeof contest.participation.teamName, 'string', `${contest.id} participation teamName invalid`);
+        }
+      }
     }
   });
 }
@@ -83,4 +96,19 @@ test('known tiered prize ranges are represented per receiving team', async () =>
       ['아이디어 부문', '100만~500만 원', 1000000, 5000000],
     ],
   );
+});
+
+test('submitted contests keep team, member, and video metadata', async () => {
+  const contests = await readJson('data/contests.seed.json');
+  const rookie = contests.find((contest) => contest.id === 'ai-rookie');
+  const seocho = contests.find((contest) => contest.id === 'seocho-ai-design');
+
+  assert.ok(seocho, 'seocho-ai-design contest should be present');
+  assert.equal(seocho.participation.teamName, 'HSMU_Makers');
+  assert.deepEqual(seocho.participation.members, ['김선휘', '신정안', '문서정']);
+  assert.equal(seocho.participation.videoUrl, 'https://youtu.be/vKHGrVniwRo?si=GSaHumDoIibG-arx');
+
+  assert.equal(rookie.participation.status, 'submitted');
+  assert.deepEqual(rookie.participation.members, ['신정안', '강민수', '안명진', '이지환', '김규민', '김의준']);
+  assert.equal(rookie.participation.videoUrl, 'https://youtu.be/stAhFcbGUu8?si=9oBpAZi37QmRSmdz');
 });

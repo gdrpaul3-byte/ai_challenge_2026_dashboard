@@ -106,6 +106,8 @@ function render() {
     const haystack = [
       c.title, c.audience, c.summary, c.contestContent,
       c.prizeDisplay, c.prizeRangeDisplay, c.prizeRangeBasis,
+      c.participation?.label, c.participation?.teamName,
+      ...(c.participation?.members ?? []),
       ...(c.prizeRangeItems ?? []).flatMap((i) => [i.label, i.display, i.basis]),
     ].join(' ').toLowerCase();
     return (!search || haystack.includes(search))
@@ -172,6 +174,7 @@ function renderTable() {
         </td>
         <td>
           <span class="cell-title">${escapeHtml(c.title)}</span>
+          ${renderParticipationBadge(c)}
           <span class="cell-meta">${escapeHtml(c.audience)}</span>
         </td>
         <td>
@@ -217,6 +220,8 @@ function renderDetail() {
       <div><dt>일정 신뢰도</dt><dd>${confidenceLabel(c.registrationConfidence)}</dd></div>
     </dl>
 
+    ${renderParticipationPanel(c)}
+
     <section class="prize-section">
       <h3>수상금 명세</h3>
       <ul class="prize-breakdown">
@@ -242,6 +247,38 @@ function renderDetail() {
     </section>
 
     ${c.notes ? `<p class="notes">${escapeHtml(c.notes)}</p>` : ''}
+  `;
+}
+
+function renderParticipationBadge(contest) {
+  const participation = contest.participation;
+  if (!participation || participation.status !== 'submitted') return '';
+
+  const team = participation.teamName ? ` · ${participation.teamName}` : '';
+  return `<span class="participation-badge">${escapeHtml(participation.label || '참가 완료')}${escapeHtml(team)}</span>`;
+}
+
+function renderParticipationPanel(contest) {
+  const participation = contest.participation;
+  if (!participation || participation.status !== 'submitted') return '';
+
+  const members = participation.members ?? [];
+  const teamRow = participation.teamName
+    ? `<div><dt>팀</dt><dd>${escapeHtml(participation.teamName)}</dd></div>`
+    : '';
+
+  return `
+    <section class="participation-card">
+      <div class="participation-card__head">
+        <span>${escapeHtml(participation.label || '참가 완료')}</span>
+        <h3>참가 기록</h3>
+      </div>
+      <dl class="participation-facts">
+        ${teamRow}
+        <div><dt>멤버</dt><dd>${escapeHtml(members.join(', '))}</dd></div>
+      </dl>
+      <a href="${escapeHtml(participation.videoUrl)}" target="_blank" rel="noreferrer">참가 영상 보기</a>
+    </section>
   `;
 }
 

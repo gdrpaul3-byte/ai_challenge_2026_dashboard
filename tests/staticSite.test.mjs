@@ -27,3 +27,14 @@ test('steampunk gauges use content-driven responsive columns', async () => {
   assert.match(css, /@media \(max-width: 520px\)/);
   assert.match(css, /\.gauge\s*{\s*grid-template-columns: minmax\(0,\s*1fr\)/);
 });
+
+test('submitted participation is rendered in list rows and detail panels', async () => {
+  const app = await readFile('web/js/app.mjs', 'utf8');
+  const css = await readFile('web/steampunk.css', 'utf8');
+
+  assert.match(app, /renderParticipationBadge/);
+  assert.match(app, /renderParticipationPanel/);
+  assert.match(app, /participation\.members/);
+  assert.match(css, /\.participation-badge/);
+  assert.match(css, /\.participation-card/);
+});
